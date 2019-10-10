@@ -1,4 +1,6 @@
 #include <sys/stat.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -7,21 +9,27 @@
 
 using namespace std;
 
-void parser()
+vector<string> parser()
 {
   char input[INPUT_LENGTH];
   scanf("%s", input);
   
-  vector<string> v; 
-  char* temp = strtok(input, ";");
+  vector<string> v;
+  char *temp;
+  temp  = strtok(input, ";");
   while(temp != NULL)
   {
     v.push_back(temp);
     temp = strtok(NULL, ";"); 
   }
 
-  printf("%d", v.size());
-  printf("%c", v[1]);
+  int size = v.size();
+  //printf("%d\n", size);
+  for(int i =0; i<size; i++)
+  {
+    //cout << v[i] << endl;
+  }
+  return v;
 }
 
 int main()
@@ -30,7 +38,16 @@ int main()
   char *directory = strcat(username, "/.myshell/");
   mkdir(directory, 0777);
 
-  parser();
+  bool alive = 1;
+
+  while(alive)
+  {
+    printf("Welcome to MyShell! \n");
+    
+    vector<string> commands = parser();
+  }
+  
+  exit(0);
   return 0;
 }
 
