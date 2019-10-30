@@ -1,0 +1,10 @@
+@author Yash Lekhwani
+
+Welcome to my shell! This shell handles several commands, including handling piping and reading input from std:in and from a file stream.
+
+In order to include it from a file stream, you will have to make a .txt file have that as your second argument to the shell.
+For example: "./myshell inputfile.txt"
+
+For piping, "ls -l|more" is supported
+
+For other questions, please email yashl@iastate.edu
